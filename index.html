@@ -1,411 +1,1155 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arun Rajan P | AI Engineer | AI Solutions Architect</title>
-<meta name="description" content="AI Engineer, Generative AI Practitioner, Data Scientist, AI Solutions Architect Portfolio">
-<style>
-:root{
---bg:#FFFFFF;
---alt:#F5F5F7;
---card:#FBFBFD;
---text:#1D1D1F;
---muted:#6E6E73;
---border:#D2D2D7;
---accent:#0066CC;
---hover:#0077ED;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-nav{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:18px 8%;display:flex;justify-content:space-between;z-index:100}
-nav a{text-decoration:none;color:var(--text);margin-left:20px}
-section{padding:90px 8%}
-.alt{background:var(--alt)}
-.hero{min-height:90vh;display:grid;grid-template-columns:2fr 1fr;gap:40px;align-items:center}
-.profile{width:320px;height:320px;border-radius:50%;object-fit:cover;border:8px solid white;box-shadow:0 20px 50px rgba(0,0,0,.15)}
-h1{font-size:4rem;line-height:1.1}
-h2{font-size:2.5rem;margin-bottom:20px}
-.subtitle{font-size:1.3rem;color:var(--muted);margin:20px 0}
-.btn{display:inline-block;padding:14px 22px;background:var(--accent);color:white;text-decoration:none;border-radius:12px;margin-right:10px}
-.btn:hover{background:var(--hover)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:25px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
-.small{color:var(--muted)}
-.timeline{border-left:3px solid var(--accent);padding-left:25px}
-.timeline div{margin-bottom:30px}
-.project-title{color:var(--accent);margin-bottom:10px}
-ul{padding-left:20px}
-.metric{font-size:3rem;font-weight:bold;color:var(--accent)}
-footer{text-align:center;padding:40px;border-top:1px solid var(--border)}
-@media(max-width:900px){
-.hero{grid-template-columns:1fr;text-align:center}
-.profile{margin:auto}
-h1{font-size:2.8rem}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arun Rajan P | AI Engineer | Enterprise AI Solutions Architect</title>
+  <meta name="description" content="Arun Rajan P — AI Engineer, Enterprise AI Solutions Architect, Generative AI Specialist, Data & Automation Consultant portfolio." />
+  <meta name="theme-color" content="#0b1020" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1830;
+      --surface: rgba(255,255,255,0.06);
+      --surface-2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f8fbff;
+      --muted: #b1c0da;
+      --accent: #7c9cff;
+      --accent-2: #46e0d2;
+      --accent-3: #b77dff;
+      --shadow: 0 20px 60px rgba(2,12,27,0.45);
+      --radius: 24px;
+      --radius-sm: 16px;
+      --maxw: 1240px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(124,156,255,0.18), transparent 0 24%),
+        radial-gradient(circle at 85% 15%, rgba(70,224,210,0.14), transparent 0 22%),
+        radial-gradient(circle at 78% 72%, rgba(183,125,255,0.12), transparent 0 20%),
+        linear-gradient(180deg, #07111f 0%, #091326 45%, #06111d 100%);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: min(var(--maxw), calc(100% - 40px)); margin: 0 auto; }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: linear-gradient(to bottom, rgba(7,17,31,0.88), rgba(7,17,31,0.35), transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 20px;
+      border-radius: 999px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .brand-mark {
+      width: 40px; height: 40px; border-radius: 14px;
+      display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(124,156,255,.35), rgba(70,224,210,.35));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.12);
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: all .3s ease;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: rgba(255,255,255,.08);
+    }
+
+    section { padding: 80px 0; }
+
+    .hero {
+      min-height: calc(100vh - 88px);
+      display: grid;
+      grid-template-columns: 1.35fr .9fr;
+      gap: 38px;
+      align-items: center;
+      padding: 40px 0 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #d9e6ff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .pulse {
+      width: 10px; height: 10px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      box-shadow: 0 0 0 0 rgba(70,224,210,.7);
+      animation: pulse 2.2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(70,224,210,.65); }
+      70% { box-shadow: 0 0 0 10px rgba(70,224,210,0); }
+      100% { box-shadow: 0 0 0 0 rgba(70,224,210,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(120deg, #ffffff 0%, #dbe8ff 32%, #89fff2 68%, #c6a6ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.02rem, 1.6vw, 1.25rem);
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.09);
+      color: #d5e2f9;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 22px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      font-weight: 700;
+      letter-spacing: .01em;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #08101e;
+      background: linear-gradient(135deg, #ffffff 0%, #cff9f4 24%, #97b4ff 70%, #ceb5ff 100%);
+      box-shadow: 0 18px 40px rgba(124,156,255,.28);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,.05);
+    }
+
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .metric-card {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.10);
+      min-height: 126px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::after {
+      content: '';
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.16), transparent 60%);
+      filter: blur(4px);
+    }
+
+    .metric-value {
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      background: linear-gradient(135deg, #ffffff, #90fff3, #a8bfff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .metric-label {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 650px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(18px);
+      opacity: .65;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .orb.one { width: 220px; height: 220px; background: rgba(124,156,255,.20); top: 5%; right: 8%; }
+    .orb.two { width: 180px; height: 180px; background: rgba(70,224,210,.16); bottom: 14%; left: 2%; animation-delay: -1.5s; }
+    .orb.three { width: 150px; height: 150px; background: rgba(183,125,255,.16); bottom: 28%; right: 0; animation-delay: -2.3s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .profile-shell {
+      width: min(460px, 100%);
+      padding: 18px;
+      border-radius: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-shell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124,156,255,.18), rgba(70,224,210,.10), rgba(183,125,255,.12));
+      z-index: 0;
+    }
+
+    .profile-shell-inner {
+      position: relative;
+      z-index: 1;
+      border-radius: 26px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 18px;
+    }
+
+    .profile-frame {
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+    }
+
+    .profile {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      transform: scale(1.02);
+    }
+
+    .floating-card {
+      position: absolute;
+      padding: 14px 16px;
+      border-radius: 18px;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    .floating-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+
+    .fc1 { top: 10%; left: -2%; animation-delay: -.3s; }
+    .fc2 { bottom: 14%; right: -2%; animation-delay: -2s; }
+    .fc3 { top: 62%; left: 0%; animation-delay: -1.4s; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker {
+      color: #9fb5d2;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -.035em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 720px;
+      font-size: 1rem;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1.1fr .9fr; gap: 26px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+    .grid-projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+
+    .card {
+      padding: 26px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: var(--shadow);
+      transition: transform .28s ease, border-color .28s ease, background .28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(124,156,255,.38);
+      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.05));
+    }
+
+    .story p + p { margin-top: 16px; }
+    .story strong { color: #fff; }
+
+    .journey-line {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .journey-line::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 7px;
+      width: 2px;
+      height: calc(100% - 8px);
+      background: linear-gradient(180deg, var(--accent), var(--accent-2), rgba(255,255,255,.1));
+    }
+
+    .step {
+      position: relative;
+      padding: 0 0 18px 24px;
+    }
+
+    .step:last-child { padding-bottom: 0; }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: 6px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: 0 0 0 4px rgba(124,156,255,.12);
+    }
+
+    .step-year {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #95b1d9;
+      margin-bottom: 8px;
+    }
+
+    .step h4 { font-size: 1.1rem; margin-bottom: 6px; }
+    .step p { color: var(--muted); }
+
+    .skill-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.08rem;
+    }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .chip {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #d9e6ff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      inset: -80px auto auto -60px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,156,255,.22), transparent 62%);
+      pointer-events: none;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(124,156,255,.12);
+      border: 1px solid rgba(124,156,255,.18);
+      color: #d9e6ff;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .project-card h3 {
+      font-size: 1.28rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-list {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 22px;
+      color: #d7e4fb;
+      font-size: 14px;
+    }
+
+    .project-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-2);
+    }
+
+    .impact {
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #f5f8ff;
+      font-weight: 600;
+    }
+
+    .experience-stack { display: grid; gap: 18px; }
+
+    .role {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .role:last-child { border-bottom: 0; padding-bottom: 0; }
+    .role h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .role .meta {
+      color: #c8d7ef;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .role ul {
+      padding-left: 20px;
+      color: var(--muted);
+      display: grid;
+      gap: 8px;
+    }
+
+    .pill-date {
+      white-space: nowrap;
+      font-weight: 800;
+      color: #dce7fb;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      font-size: 13px;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .contact-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #e6efff;
+      font-weight: 600;
+    }
+
+    .frame {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      min-height: 520px;
+    }
+
+    iframe { width: 100%; height: 100%; min-height: 520px; border: 0; display: block; }
+
+    footer {
+      padding: 36px 0 46px;
+      color: #9db1ce;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .footer-note {
+      max-width: 760px;
+      margin: 0 auto 8px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    .cursor-glow {
+      position: fixed;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      pointer-events: none;
+      background: radial-gradient(circle, rgba(124,156,255,.12), rgba(70,224,210,.05), transparent 62%);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      mix-blend-mode: screen;
+      filter: blur(16px);
+      opacity: .9;
+    }
+
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; padding-top: 20px; }
+      .hero-visual { min-height: auto; }
+      .grid-2, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-proof { grid-template-columns: repeat(2, 1fr); }
+      .fc1 { left: 4%; }
+      .fc2 { right: 4%; }
+      .fc3 { left: 4%; }
+    }
+
+    @media (max-width: 820px) {
+      nav { border-radius: 24px; padding: 12px 14px; }
+      .nav-links { display: none; }
+      section { padding: 64px 0; }
+      .hero-proof { grid-template-columns: 1fr 1fr; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .role { grid-template-columns: 1fr; }
+      .pill-date { justify-self: start; }
+      .profile-shell { width: 100%; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(var(--maxw), calc(100% - 24px)); }
+      .hero h1 { font-size: 2.5rem; }
+      .hero-proof { grid-template-columns: 1fr; }
+      .cta-row { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .floating-card { position: static; margin-top: 12px; }
+      .hero-visual { display: block; }
+      .profile-shell { margin-bottom: 12px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="glass">
+        <a href="#top" class="brand" aria-label="Home">
+          <span class="brand-mark">AR</span>
+          <span>Arun Rajan P</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="reveal">
+        <div class="eyebrow"><span class="pulse"></span> Enterprise AI • Generative AI • Intelligent Automation</div>
+        <h1>
+          Architecting <span class="gradient-text">Enterprise AI Solutions</span><br>
+          that turn data into strategic decisions.
+        </h1>
+        <p class="hero-lead">
+          AI Engineer, Generative AI Specialist, Business Transformation Consultant, and Enterprise AI Architect with 11+ years of experience building scalable, high-impact solutions across analytics, automation, machine learning, AI agents, and enterprise AI platforms.
+        </p>
+
+        <div class="hero-sub" aria-label="professional specialties">
+          <span class="tag">Generative AI</span>
+          <span class="tag">AI Agents</span>
+          <span class="tag">RAG Solutions</span>
+          <span class="tag">Power Platform</span>
+          <span class="tag">Databricks</span>
+          <span class="tag">Enterprise Architecture</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#projects">Explore Featured Projects</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/arunrajanp/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="metric-card glass reveal">
+            <div class="metric-value">11+</div>
+            <div class="metric-label">Years solving business and technology problems</div>
+          </div>
+          <div class="metric-card glass reveal">
+            <div class="metric-value">90+</div>
+            <div class="metric-label">Professional skills across AI, data, automation and cloud</div>
+          </div>
+          <div class="metric-card glass reveal">
+            <div class="metric-value">50+</div>
+            <div class="metric-label">Professional certifications and continuous learning milestones</div>
+          </div>
+          <div class="metric-card glass reveal">
+            <div class="metric-value">90%</div>
+            <div class="metric-label">Automation savings on targeted business processes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="orb one"></div>
+        <div class="orb two"></div>
+        <div class="orb three"></div>
+
+        <div class="floating-card glass fc1">AI + Business Value<small>Bridging strategy with execution</small></div>
+        <div class="floating-card glass fc2">50+ Certifications<small>Built on curiosity and continuous upskilling</small></div>
+        <div class="floating-card glass fc3">Scalable Solutions<small>Enterprise-ready design mindset</small></div>
 
 
-<nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    </section>
 
-  <!-- Left side -->
-  <div>
-    <a href="#top" style="text-decoration: none; color: inherit;">
-      <strong>Home</strong>
+    <section id="about">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">From Excel-first problem solver to enterprise AI architect.</h2>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card glass story reveal">
+          <p>
+            Five years ago, my technical toolkit was primarily centered around <strong>Excel</strong>. Driven by curiosity, relentless learning, and a passion for solving real business problems, I steadily expanded into <strong>data analytics</strong>, <strong>business intelligence</strong>, <strong>automation</strong>, <strong>data science</strong>, and <strong>artificial intelligence</strong>.
+          </p>
+          <p>
+            Over time, I built hands-on expertise across <strong>Power Query</strong>, <strong>VBA</strong>, <strong>SQL</strong>, <strong>Power BI</strong>, <strong>Tableau</strong>, <strong>Python</strong>, <strong>R</strong>, and the <strong>Microsoft Power Platform</strong> including Power Apps, Power Automate, Power Virtual Agents, and Copilot Studio. That journey matured into deep specialization in <strong>Machine Learning</strong>, <strong>Generative AI</strong>, <strong>AI Agents</strong>, and <strong>Enterprise AI Architecture</strong>.
+          </p>
+          <p>
+            Today, I focus on translating complex business needs into <strong>scalable AI-powered solutions</strong> that improve operational efficiency, elevate customer experience, drive automation, and enable sharper decision intelligence. My edge is simple: I understand both the <strong>business context</strong> and the <strong>technical architecture</strong> required to create measurable value.
+          </p>
+        </div>
+
+        <div class="card glass reveal">
+          <div class="section-kicker" style="margin-bottom:14px;">Value Proposition</div>
+          <h3 style="font-size:1.5rem; line-height:1.2; margin-bottom:12px;">What makes my portfolio different</h3>
+          <p class="section-desc" style="margin-bottom:18px;">I do more than build models or dashboards. I design end-to-end AI experiences that fit enterprise constraints, stakeholder needs, governance standards, and business outcomes.</p>
+          <div class="chips">
+            <span class="chip">Business Strategy</span>
+            <span class="chip">Consulting Mindset</span>
+            <span class="chip">Data & Analytics</span>
+            <span class="chip">ML & GenAI</span>
+            <span class="chip">Automation</span>
+            <span class="chip">Cloud Platforms</span>
+            <span class="chip">Executive Storytelling</span>
+            <span class="chip">Solution Design</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="journey">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Journey</div>
+          <h2 class="section-title">A progression built on curiosity, discipline, and execution.</h2>
+          <p class="section-desc">My career arc reflects a continuous evolution from operations and analytics into advanced AI and architectural leadership.</p>
+        </div>
+      </div>
+
+      <div class="card glass journey-line reveal">
+        <div class="step">
+          <span class="step-year">2014 — 2018</span>
+          <h4>Business operations, Excel automation, reporting and analytics</h4>
+          <p>Built strong foundations in process improvement, reporting discipline, business operations, and structured problem solving.</p>
+        </div>
+        <div class="step">
+          <span class="step-year">2018 — 2021</span>
+          <h4>Risk operations, KPI analysis, fraud detection and investigations</h4>
+          <p>Developed analytical rigor through risk monitoring, transaction analysis, anomaly detection, and operational decision support.</p>
+        </div>
+        <div class="step">
+          <span class="step-year">2021 — 2023</span>
+          <h4>Data science, machine learning, Python and statistical modeling</h4>
+          <p>Deepened technical expertise with advanced analytics, predictive techniques, academic learning, and practical ML applications.</p>
+        </div>
+        <div class="step">
+          <span class="step-year">2023 — 2025</span>
+          <h4>Generative AI, prompt engineering, RAG, AI agents and cloud AI platforms</h4>
+          <p>Expanded into modern AI system design using Copilot Studio, Databricks, AWS, Azure AI, and enterprise-scale automation patterns.</p>
+        </div>
+        <div class="step">
+          <span class="step-year">Today</span>
+          <h4>Enterprise AI solutions and intelligent automation at scale</h4>
+          <p>Combining 90+ skills and 50+ certifications to design practical AI systems that align technology innovation with business value.</p>
+        </div>
+        <div class="step">
+          <span class="step-year">Vision</span>
+          <h4>AI Solutions Architect → AI Consultant → AI Practice Lead</h4>
+          <p>Building toward broader leadership, stronger strategic influence, and the ability to shape enterprise AI transformation end-to-end.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Skills & Expertise</div>
+          <h2 class="section-title">A multidisciplinary toolkit for modern AI transformation.</h2>
+          <p class="section-desc">From ideation and architecture to implementation and business adoption, I work across the stack.</p>
+        </div>
+      </div>
+
+      <div class="grid-auto">
+        <div class="card glass skill-card reveal">
+          <h3>Artificial Intelligence</h3>
+          <div class="chips">
+            <span class="chip">Generative AI</span><span class="chip">LLMs</span><span class="chip">Prompt Engineering</span><span class="chip">RAG</span><span class="chip">AI Agents</span><span class="chip">AI Automation</span>
+          </div>
+        </div>
+        <div class="card glass skill-card reveal">
+          <h3>Machine Learning</h3>
+          <div class="chips">
+            <span class="chip">Regression</span><span class="chip">Classification</span><span class="chip">Clustering</span><span class="chip">NLP</span><span class="chip">Model Evaluation</span>
+          </div>
+        </div>
+        <div class="card glass skill-card reveal">
+          <h3>Data Science</h3>
+          <div class="chips">
+            <span class="chip">Python</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Scikit-Learn</span><span class="chip">TensorFlow</span>
+          </div>
+        </div>
+        <div class="card glass skill-card reveal">
+          <h3>Visualization & BI</h3>
+          <div class="chips">
+            <span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">IBM Cognos</span><span class="chip">Executive Dashboards</span>
+          </div>
+        </div>
+        <div class="card glass skill-card reveal">
+          <h3>Cloud & AI Platforms</h3>
+          <div class="chips">
+            <span class="chip">Azure AI</span><span class="chip">Azure OpenAI</span><span class="chip">Databricks</span><span class="chip">Snowflake</span><span class="chip">AWS</span>
+          </div>
+        </div>
+        <div class="card glass skill-card reveal">
+          <h3>Automation & Enterprise Systems</h3>
+          <div class="chips">
+            <span class="chip">Power Automate</span><span class="chip">Selenium</span><span class="chip">Power Apps</span><span class="chip">Oracle Cloud</span><span class="chip">CRM</span><span class="chip">Procurement Systems</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Featured Projects</div>
+          <h2 class="section-title">Enterprise AI solutions designed for measurable business outcomes.</h2>
+          <p class="section-desc">A selection of AI, analytics, and automation solutions focused on speed, accuracy, decision intelligence, and operational efficiency.</p>
+        </div>
+      </div>
+
+      <div class="grid-projects">
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">RAG + Copilot</span>
+          </div>
+          <h3>AI Copilot Agent Platform</h3>
+          <p><strong>Challenge:</strong> Business users needed instant access to contracts, invoices, orders, and customer intelligence without waiting on data teams.</p>
+          <ul class="project-list">
+            <li>Natural language enterprise querying</li>
+            <li>Customer and invoice analytics</li>
+            <li>Contract intelligence and summaries</li>
+            <li>Executive-ready insight generation</li>
+            <li>Automated reporting experiences</li>
+          </ul>
+          <div class="impact">Business impact: reduced dependency on specialized data teams and accelerated decision-making across business users.</div>
+        </article>
+
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">Meeting Intelligence</span>
+          </div>
+          <h3>AI-Powered Meeting Intelligence Assistant</h3>
+          <p><strong>Architecture:</strong> Microsoft Teams + Copilot Studio + AI Builder + Databricks + Power Automate + AWS S3.</p>
+          <ul class="project-list">
+            <li>PII masking and privacy-aware workflows</li>
+            <li>Meeting summarization</li>
+            <li>Action item extraction</li>
+            <li>Human-in-the-loop validation</li>
+            <li>Cross-tool integration design</li>
+          </ul>
+          <div class="impact">Business impact: reduced manual documentation effort and improved follow-up accountability.</div>
+        </article>
+
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">Predictive Analytics</span>
+          </div>
+          <h3>Churn Prediction & Retention Analytics Platform</h3>
+          <p>Built a predictive framework to identify at-risk customers and support proactive retention actions.</p>
+          <ul class="project-list">
+            <li>Feature engineering and behavioral signals</li>
+            <li>Customer segmentation</li>
+            <li>Risk scoring</li>
+            <li>Interactive dashboards</li>
+            <li>Retention recommendations</li>
+          </ul>
+          <div class="impact">Business impact: enabled proactive customer retention strategies with sharper visibility into churn signals.</div>
+        </article>
+
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">NLP Automation</span>
+          </div>
+          <h3>Intelligent Email Classification Platform</h3>
+          <p>Designed an AI-driven workflow to classify, prioritize, and route emails based on business relevance and urgency.</p>
+          <ul class="project-list">
+            <li>AI-powered categorization</li>
+            <li>Priority scoring</li>
+            <li>Stakeholder routing</li>
+            <li>Workflow automation</li>
+            <li>Real-time monitoring</li>
+          </ul>
+          <div class="impact">Business impact: improved response speed, operational efficiency, and consistency while lowering manual effort.</div>
+        </article>
+
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">Audit Intelligence</span>
+          </div>
+          <h3>Vendor Audit & Compliance Intelligence</h3>
+          <p>Created an intelligent compliance and audit workflow to streamline vendor evaluation and improve oversight.</p>
+          <ul class="project-list">
+            <li>Supplier evaluation automation</li>
+            <li>Compliance validation</li>
+            <li>AI-generated audit summaries</li>
+            <li>Risk scoring</li>
+            <li>Executive dashboards</li>
+          </ul>
+          <div class="impact">Business impact: increased compliance visibility and improved audit efficiency for decision-makers.</div>
+        </article>
+
+        <article class="card glass project-card reveal">
+          <div class="project-top">
+            <span class="badge">Consulting Mindset</span>
+          </div>
+          <h3>Business-to-AI Transformation Design</h3>
+          <p>Converted complex operational pain points into scalable automation and AI solution blueprints aligned to stakeholder needs.</p>
+          <ul class="project-list">
+            <li>Requirements discovery</li>
+            <li>Solution architecture</li>
+            <li>Business process redesign</li>
+            <li>Risk and governance alignment</li>
+            <li>Adoption-focused implementation thinking</li>
+          </ul>
+          <div class="impact">Business impact: enabled practical, enterprise-ready AI adoption instead of isolated experiments.</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Experience</div>
+          <h2 class="section-title">Professional experience across consulting, analytics, risk, and operations.</h2>
+          <p class="section-desc">Each role added a layer to my approach: understand the business deeply, then design solutions that scale.</p>
+        </div>
+      </div>
+
+      <div class="experience-stack">
+        <div class="card glass reveal">
+          <div class="role">
+            <div>
+              <h3>Business Process Consultant | CDK Global</h3>
+              <div class="meta">Partnering with business and technology stakeholders to design AI, analytics, automation, and strategic solutions.</div>
+              <ul>
+                <li>Design and implement AI-enabled workflows using Microsoft Power Platform, improving operational efficiency and reducing manual effort.</li>
+                <li>Build Copilot Studio–based conversational and automation solutions for business productivity and better user experience.</li>
+                <li>Develop API and HTTP-based integrations across enterprise applications and data pipelines.</li>
+                <li>Leverage Databricks for scalable transformation, analytics, and decision-support solutions.</li>
+                <li>Lead end-to-end project delivery including requirements gathering, solution design, risk management, and process optimization.</li>
+                <li>Mentor junior analysts on analytics delivery, automation practices, and tool adoption.</li>
+              </ul>
+            </div>
+            <div class="pill-date">Mar 2024 – Present</div>
+          </div>
+
+          <div class="role" style="margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,.08);">
+            <div>
+              <h3>Business Analyst | CDK Global</h3>
+              <div class="meta">Advanced analytics, reporting, process optimization, and automation delivery.</div>
+              <ul>
+                <li>Performed advanced data analysis using Python, SQL, Excel, IBM Cognos, and modern reporting tools.</li>
+                <li>Designed dashboards and automated reports with advanced logic and business-friendly storytelling.</li>
+                <li>Improved vendor invoice audit processes with higher data accuracy and stronger compliance alignment.</li>
+                <li>Collaborated cross-functionally across contracts, invoicing, pricing, and vendor management workflows.</li>
+              </ul>
+            </div>
+            <div class="pill-date">Aug 2021 – Mar 2024</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card glass reveal">
+            <div class="role">
+              <div>
+                <h3>Risk Analyst | Wipro</h3>
+                <div class="meta">Risk modeling, transaction monitoring, fraud pattern analysis, and operational decision support.</div>
+                <ul>
+                  <li>Built risk dashboards and analytical reporting to support decision-making.</li>
+                  <li>Monitored transactions to identify anomalies, fraud patterns, and compliance issues.</li>
+                  <li>Investigated suspicious activity and supported mitigation planning.</li>
+                  <li>Supported reconciliation and settlement processes using structured data analysis.</li>
+                </ul>
+              </div>
+              <div class="pill-date">Oct 2018 – Sep 2021</div>
+            </div>
+          </div>
+
+          <div class="card glass reveal">
+            <div class="role">
+              <div>
+                <h3>Earlier Career Foundations</h3>
+                <div class="meta">Operations leadership, quality, customer focus, business growth, and practical execution.</div>
+                <ul>
+                  <li><strong>Manager – Quality Surveyor | ABA Electricals Pvt Ltd</strong> — Managed quality assurance operations, reporting, and process compliance.</li>
+                  <li><strong>Managing Partner | AARON LEDs</strong> — Led business operations, sales strategy, reporting, and customer engagement to drive growth.</li>
+                </ul>
+              </div>
+              <div class="pill-date">2014 – 2017</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s build enterprise AI solutions that create real value.</h2>
+          <p class="section-desc">Open to AI Engineer, Senior AI Engineer, AI Solutions Architect, AI Consultant, Data Scientist, and AI leadership opportunities.</p>
+        </div>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="card glass contact-card reveal">
+          <h3>Start a conversation</h3>
+          <p>If you are exploring AI transformation, enterprise automation, data intelligence, or next-generation Copilot and agent experiences, I’d be glad to connect.</p>
+          <p>Open to collaboration, consulting, and strategic AI opportunities.</p>
+          <p>Interested in roles that combine technology, architecture, and business impact.</p>
+<br>
+
+<div class="contact-list">
+  <div style="text-align:center;">
+    <a class="contact-item" href="https://www.linkedin.com/in/arunrajanp/" target="_blank" rel="noopener noreferrer">
+      Connect on LinkedIn
     </a>
   </div>
+</div>
 
-  <!-- Right side -->
-  <div style="display: flex; gap: 20px;">
-    <a href="#about">About</a>
-    <a href="#journey">Journey</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
-  </div>
-
-</nav>
-
-
-<section class="hero">
-    <div class="hero-content">
         
-        <h1>Arun Rajan P</h1>
-
-        <h2 style="font-size: 1.2rem;">
-            Architecting Enterprise AI Solutions That Turn Data Into Strategic Decisions
-        </h2>
-
-        <p class="subtitle">
-            AI Engineer • Generative AI Specialist • Business Transformation Consultant • Enterprise AI Architect
-        </p>
-
-        <p>
-            Experienced AI professional with 11+ years of expertise across business consulting,
-            advanced analytics, machine learning, intelligent automation, Generative AI,
-            AI agents, and enterprise-scale AI platforms. Focused on designing and deploying
-            solutions that improve operational efficiency, enhance decision intelligence,
-            and deliver measurable business impact across industries.
-        </p>
-<br>    
-        <div class="hero-actions">
-            <a class="btn" href="#projects">Explore Projects</a>
-            <a class="btn"
-               href="https://www.linkedin.com/in/arunrajanp/"
-               target="_blank"
-               rel="noopener noreferrer">
-                Connect on LinkedIn
-            </a>
         </div>
-<br>
+      </div>
+    </section>
+  </main>
 
-        <div class="impact-snapshot">
-            <h2>Impact Snapshot</h2>
+  <footer>
+    <p class="footer-note">Building AI solutions that bridge technology, strategy, and measurable business value.</p>
+    <p>© 2026 Arun Rajan P</p>
+  </footer>
 
-            <div class="grid">
-                <div class="card">
-                    <div class="metric">11+</div>
-                    <p>Years Experience</p>
-                </div>
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => observer.observe(el));
 
-                <div class="card">
-                    <div class="metric">90+</div>
-                    <p>Professional Skills</p>
-                </div>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const top = section.offsetTop - 120;
+        const height = section.offsetHeight;
+        if (scrollY >= top && scrollY < top + height) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    });
 
-                <div class="card">
-                    <div class="metric">50+</div>
-                    <p>Certifications</p>
-                </div>
-
-                <div class="card">
-                    <div class="metric">90%</div>
-                    <p>Automation Savings</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="hero-image">
-        <img
-            class="profile"
-            src="https://avatars.githubusercontent.com/u/109856238?s=400&u=f8e79f99d591acace33863cb943764607f85c956&v=4"
-            alt="Arun Rajan P">
-    </div>
-
-</section>>
-
-</section>
-
-<section id="about" class="alt">
-<h2>About Me</h2>
-<div class="card">
-<h3 style="font-size: 1.4rem;">Personal Growth Story</h3>
-<br>
-<p> 
-<strong>Five years</strong> ago, my technical skill set was primarily centered around <strong>Excel</strong>. Driven by <strong>curiosity</strong>, <strong>continuous learning</strong>, and a passion for solving business problems, I progressively expanded my expertise across <strong>data analytics</strong>, <strong>business intelligence</strong>, <strong>automation</strong>, <strong>data science</strong>, and <strong>artificial intelligence</strong>.
-</p>
-<br>
-<p>
-Over the years, I have developed hands-on experience with <strong>Power Query</strong>, <strong>VBA</strong>,<strong>SQL</strong>, <strong>Power BI</strong>, <strong>Tableau</strong>, <strong>Python</strong>, <strong>R</strong>, and the <strong>Microsoft Power Platform</strong>, including <strong>Power Apps</strong>, <strong>Power Automate</strong>, <strong>Power Virtual Agents</strong>, and <strong>Copilot Studio</strong>. My expertise has further evolved into <strong>Machine Learning</strong>, <strong>Generative AI</strong>, <strong>AI Agents</strong>, and <strong>Enterprise AI Architecture</strong>. This journey has been supported by earning <strong>more than 50 professional certifications</strong> and applying these skills to solve <strong>real-world business challenges</strong>.
-</p>
-<br>
-<p>
-Today, I specialize in bridging <strong>business strategy</strong> and <strong>advanced AI technologies</strong>, transforming complex business problems into <strong>scalable AI-powered solutions</strong> that drive <strong>automation</strong>, <strong>operational efficiency</strong>, <strong>customer experience</strong>, and <strong>data-driven decision-making</strong>. My unique combination of <strong>business consulting experience</strong> and <strong>technical expertise</strong> enables me to deliver <strong>innovative solutions</strong> that create <strong>measurable business value</strong>.
-</p>
-
-</div>
-</section>
-
-<section id="journey">
-<h2>My AI Learning Journey</h2>
-<div class="timeline">
-<p><strong>2014-2018:</strong> Built foundations in business operations, Excel automation, reporting and analytics.</p>
-<p><strong>2018-2021:</strong> Risk operations, data analysis, KPI tracking, fraud detection, Google Pay investigation.</p>
-<p><strong>2021-2023:</strong> Master's in Data Science, Machine Learning, Python, Statistical Modeling.</p>
-<p><strong>2023-2025:</strong> Generative AI, Prompt Engineering, RAG, AI Agents, Copilot Studio, Databricks, AWS, Azure AI.</p>
-<p><strong>Today:</strong> 90+ skills, 50+ certifications, building enterprise AI solutions and intelligent automation.</p>
-<p><strong>Vision:</strong> AI Solutions Architect → AI Consultant → AI Practice Lead.</p>
-</div>
-</section>
-
-<section id="skills">
-<h2>Skills & Expertise</h2>
-<div class="grid">
-<div class="card"><h3>Artificial Intelligence</h3><p>Generative AI, LLMs, Prompt Engineering, RAG, AI Agents, AI Automation</p></div>
-<div class="card"><h3>Machine Learning</h3><p>Regression, Classification, Clustering, NLP, Model Evaluation</p></div>
-<div class="card"><h3>Data Science</h3><p>Python, Pandas, NumPy, Scikit-Learn, TensorFlow</p></div>
-<div class="card"><h3>Visualization</h3><p>Power BI, Tableau, IBM Cognos</p></div>
-<div class="card"><h3>Cloud & AI</h3><p>Azure AI, Azure OpenAI, Databricks, Snowflake, AWS</p></div>
-<div class="card"><h3>Automation</h3><p>Power Automate, Selenium, Workflow Automation</p></div>
-<div class="card"><h3>Enterprise Systems</h3><p>Oracle Cloud, CRM, Procurement Systems</p></div>
-<div class="card"><h3>Leadership</h3><p>Stakeholder Management, Consulting, Solution Design, Team Leadership</p></div>
-</div>
-</section>
-
-
-<section id="projects" class="alt">
-<h2>Featured Enterprise AI Solutions</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3 class="project-title">AI Copilot Agent Platform</h3>
-<p><strong>Challenge:</strong> Business users required instant access to contracts, invoices, orders and customer intelligence.</p>
-<p><strong>Solution:</strong> Built a RAG-powered AI Copilot integrating enterprise data and natural language conversations.</p>
-<p><strong>Key Capabilities:</strong></p>
-<ul>
-<li>Natural language querying</li>
-<li>Customer & invoice analytics</li>
-<li>Contract intelligence</li>
-<li>Executive summary generation</li>
-<li>Automated reporting</li>
-</ul>
-<p><strong>Business Impact:</strong> Reduced dependency on data teams and accelerated business decision-making.</p>
-</div>
-
-<div class="card">
-<h3 class="project-title">AI-Powered Meeting Intelligence Assistant</h3>
-<p><strong>Solution Architecture:</strong> Microsoft Teams + Copilot Studio +AI Builder + Databricks + Power Automate + AWS S3.</p>
-<ul>
-
-<li>PII masking</li>
-<li>Meeting summarization</li>
-<li>Action item extraction</li>
-<li>Human-in-the-loop validation</li>
-<li>Integration with Different Tools.</li>
-</ul>
-<p><strong>Business Impact:</strong> Reduced manual documentation effort and improved follow-up accountability.</p>
-</div>
-
-<div class="card">
-<h3 class="project-title">Churn Prediction & Retention Analytics Platform</h3>
-<ul>
-<li>Feature engineering</li>
-<li>Customer segmentation</li>
-<li>Risk scoring</li>
-<li>Interactive dashboards</li>
-<li>Retention recommendations</li>
-</ul>
-<p><strong>Technologies:</strong> Python, Pandas, Scikit-Learn, SQL, Power BI.</p>
-<p><strong>Business Impact:</strong> Enabled proactive customer retention strategies.</p>
-</div>
-
-<div class="card">
-<h3 class="project-title">Intelligent Email Classification Platform</h3>
-<ul>
-<li>AI-powered categorization</li>
-<li>Priority scoring</li>
-<li>Stakeholder routing</li>
-<li>Workflow automation</li>
-<li>Real-time monitoring</li>
-</ul>
-<p><strong>Business Impact:</strong> Faster response times, improved operational efficiency and reduced manual effort.</p>
-</div>
-
-<div class="card">
-<h3 class="project-title">Vendor Audit & Compliance Intelligence</h3>
-<ul>
-<li>Supplier evaluation automation</li>
-<li>Compliance validation</li>
-<li>AI-generated audit summaries</li>
-<li>Risk scoring</li>
-<li>Executive dashboards</li>
-</ul>
-<p><strong>Business Impact:</strong> Increased compliance visibility and audit efficiency.</p>
-</div>
-
-</div>
-</section>
-
-<section id="experience">
-  <h2>Professional Experience</h2>
-
-  <div class="card">
-    <h3>Business Process Consultant | CDK Global | Mar 2024 – Present</h3>
-    <ul>
-      <li>Partner with business and technology stakeholders to deliver data-driven insights, automation solutions, and strategic recommendations.</li>
-
-      <li>Design and implement AI-enabled and automation workflows using Microsoft Power Platform (Power Automate, Power Apps, Power BI), improving operational efficiency and reducing manual effort.</li>
-
-      <li>Work on Copilot Studio–based conversational and automation solutions to enhance business process productivity and user experience.</li>
-
-      <li>Develop and integrate API and HTTP-based services to enable system interoperability across enterprise applications and data pipelines.</li>
-
-      <li>Leverage Databricks for scalable data processing, transformation, and analytics to support reporting and decision-making use cases.</li>
-
-      <li>Build and maintain automated reporting and dashboards using IBM Cognos, Power BI, Python, SQL, and Excel for real-time business visibility.</li>
-
-      <li>Lead end-to-end project delivery including requirements gathering, solution design, risk management, and process optimization.</li>
-
-      <li>Mentor and guide junior analysts on analytics delivery, automation practices, and tool adoption across Power Platform, Python, and reporting ecosystems.</li>
-
-      <li>Collaborate in Agile Scrum environments with product owners, developers, testers, and vendors to deliver scalable business solutions.</li>
-    </ul>
-<br>
-    <h3>Business Analyst | CDK Global | Aug 2021 – Mar 2024</h3>
-    <ul>
-      <li>Performed advanced data analysis using Python (Pandas, SciPy, Matplotlib, TensorFlow), SQL, Excel, and IBM Cognos to support business decision-making.</li>
-
-      <li>Designed and automated dashboards and reports using IBM Cognos and Tableau with advanced filtering and calculation logic.</li>
-
-      <li>Implemented end-to-end vendor invoice audit processes ensuring high data accuracy, process compliance, and operational efficiency improvements.</li>
-
-      <li>Collaborated with cross-functional teams to optimize business processes across contracts, invoicing, pricing, and vendor management workflows.</li>
-
-      <li>Worked with stakeholders to translate business requirements into analytical solutions and reporting frameworks.</li>
-
-      <li>Supported automation initiatives that reduced manual reporting effort and improved delivery timelines through scripting and workflow optimization.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Risk Analyst | Wipro | Oct 2018 – Sep 2021</h3>
-    <ul>
-      <li>Developed risk models, dashboards, and analytical reports to support operational risk monitoring and decision-making.</li>
-
-      <li>Monitored transactional data to identify anomalies, fraud patterns, and compliance risks.</li>
-
-      <li>Investigated suspicious activities and collaborated with teams to implement mitigation strategies.</li>
-
-      <li>Supported reconciliation and settlement processes through structured data analysis and reporting.</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Manager – Quality Surveyor | ABA Electricals Pvt Ltd | Jun 2016 – Jul 2017</h3>
-    <p>Managed quality assurance operations, reporting, and process compliance while driving operational improvements.</p>
-  </div>
-
-  <div class="card">
-    <h3>Managing Partner | AARON LEDs | Jan 2014 – May 2016</h3>
-    <p>Led business operations, sales strategy, reporting, and customer engagement to drive business growth and operational efficiency.</p>
-  </div>
-
-</section>
-
-
-<section id="contact" class="contact-section">
-  <div class="contact-container">
-
-    <!-- TOP CONTENT -->
-    <h2 style="margin-bottom:5px;">Contact</h2>
-    <h3 style="margin-top:0;">Let's Build Enterprise AI Solutions</h3>
-
-    <div class="info-box">
-      
-      <p>
-        <strong>Open To</strong><br>
-        AI Engineer, Senior AI Engineer, AI Solutions Architect, 
-        AI Consultant, Data Scientist and AI Leadership opportunities.
-      </p>
-
-      <p style="margin-top:15px; color:#555;">
-        Actively engaging on 
-        <a href="https://www.linkedin.com/in/arunrajanp/" 
-           target="_blank" 
-           rel="noopener noreferrer">
-           LinkedIn
-        </a> — welcome to connect and collaborate.
-      </p>
-
-    </div>
-
-    <!-- GOOGLE FORM -->
-    <div class="form-section">
-      <h3>Start a Conversation by submitting the form below</h3>
-
-      <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSe8r-MiYpcWXi6uhn9Xqt6ONQkV4uC6g4S4x8AVWfRP4u1d_w/viewform?embedded=true"
-        width="100%"
-        height="400"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0">
-        Loading…
-      </iframe>
-    </div>
-
-  </div>
-</section>
-
-<style>
-  .contact-section {
-    padding: 80px 20px;
-    background: #f7f8fc;
-    font-family: Arial, sans-serif;
-  }
-
-  .contact-container {
-    max-width: 800px;
-    margin: auto;
-  }
-
-  .info-box p {
-    margin: 10px 0;
-    color: #333;
-    line-height: 1.6;
-  }
-
-  .form-section {
-    margin-top: 30px;
-  }
-
-  .form-section h3 {
-    margin-bottom: 15px;
-  }
-
-  .form-section iframe {
-    border-radius: 8px;
-    border: none;
-  }
-</style>
-
-
-<footer>
-Building AI Solutions That Bridge Technology and Business Value.<br><br>
-© 2026 Arun Rajan P
-</footer>
+    const glow = document.querySelector('.cursor-glow');
+    window.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+  </script>
+</body>
+</html>
