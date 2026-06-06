@@ -328,43 +328,45 @@ Today, I specialize in bridging <strong>business strategy</strong> and <strong>a
 </section>
 
 
-
 <section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <!-- LEFT SIDE -->
-    <div class="contact-info">
-      <h2>Let's Build Enterprise AI Solutions</h2>
-    
-<br>
+    <!-- TOP CONTENT -->
+    <h2 style="margin-bottom:5px;">Contact</h2>
+    <h3 style="margin-top:0;">Let's Build Enterprise AI Solutions</h3>
 
-      <div class="info-box">
-        <p><strong>Email:</strong> a*****@gmail.com</p>
-        <p><strong>LinkedIn:</strong> linkedin.com/in/arunrajanp</p>
-
-<br>
+    <div class="info-box">
       
-        <p>
-          <strong>  Open To    </strong>  AI Engineer, Senior AI Engineer, AI Solutions Architect, AI Consultant and AI Leadership opportunities.
-        </p>
-      </div>
+      <p>
+        <strong>Open To</strong><br>
+        AI Engineer, Senior AI Engineer, AI Solutions Architect, 
+        AI Consultant, Data Scientist and AI Leadership opportunities.
+      </p>
+
+      <p style="margin-top:15px; color:#555;">
+        Actively engaging on 
+        <a href="https://www.linkedin.com/in/arunrajanp/" 
+           target="_blank" 
+           rel="noopener noreferrer">
+           LinkedIn
+        </a> — welcome to connect and collaborate.
+      </p>
+
     </div>
 
-    <!-- RIGHT SIDE (FORM) -->
-    <div class="contact-form-wrapper">
+    <!-- GOOGLE FORM -->
+    <div class="form-section">
+      <h3>Start a Conversation by submitting the form below</h3>
 
-      <form id="contactForm" class="contact-form">
-        <h3>Send a Message</h3>
-
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit" id="submitBtn">Send Message</button>
-
-        <p id="formStatus" class="status"></p>
-      </form>
-
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe8r-MiYpcWXi6uhn9Xqt6ONQkV4uC6g4S4x8AVWfRP4u1d_w/viewform?embedded=true"
+        width="100%"
+        height="400"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">
+        Loading…
+      </iframe>
     </div>
 
   </div>
@@ -378,143 +380,29 @@ Today, I specialize in bridging <strong>business strategy</strong> and <strong>a
   }
 
   .contact-container {
-    max-width: 1100px;
+    max-width: 800px;
     margin: auto;
-    display: flex;
-    gap: 40px;
-    align-items: stretch;
-  }
-
-  /* LEFT */
-  .contact-info {
-    flex: 6;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-  }
-
-  .contact-info h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    color: #555;
-    margin-bottom: 20px;
   }
 
   .info-box p {
     margin: 10px 0;
     color: #333;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
-  /* RIGHT */
-  .contact-form-wrapper {
-    flex: 4;
-    background: white;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    display: flex;
-    align-items: center;
+  .form-section {
+    margin-top: 30px;
   }
 
-  .contact-form {
-    width: 100%;
-  }
-
-  .contact-form h3 {
-    margin-bottom: 20px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    width: 100%;
-    padding: 12px;
+  .form-section h3 {
     margin-bottom: 15px;
-    border: 1px solid #ddd;
+  }
+
+  .form-section iframe {
     border-radius: 8px;
-    font-size: 14px;
-    outline: none;
-  }
-
-  .contact-form textarea {
-    min-height: 120px;
-    resize: vertical;
-  }
-
-  .contact-form button {
-    width: 100%;
-    padding: 12px;
-    background: #111;
-    color: white;
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-
-  .contact-form button:hover {
-    background: #333;
-  }
-
-  .status {
-    margin-top: 10px;
-    font-size: 14px;
-    color: green;
-  }
-
-  /* MOBILE */
-  @media (max-width: 768px) {
-    .contact-container {
-      flex-direction: column;
-    }
   }
 </style>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const btn = document.getElementById("submitBtn");
-  const status = document.getElementById("formStatus");
-
-  btn.disabled = true;
-  btn.innerText = "Sending...";
-
-  const formData = {
-    name: e.target.name.value,
-    email: e.target.email.value,
-    message: e.target.message.value
-  };
-
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData)
-    });
-
-    if (res.ok) {
-      status.innerText = "Message sent successfully.";
-      status.style.color = "green";
-      e.target.reset();
-    } else {
-      status.innerText = "Failed to send message.";
-      status.style.color = "red";
-    }
-  } catch (err) {
-    status.innerText = "Server error.";
-    status.style.color = "red";
-  }
-
-  btn.disabled = false;
-  btn.innerText = "Send Message";
-});
-</script>
 
 
 <footer>
